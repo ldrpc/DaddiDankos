@@ -1,3 +1,72 @@
+/**
+ * The $1 Unistroke Recognizer (JavaScript version)
+ *
+ *	Jacob O. Wobbrock, Ph.D.
+ * 	The Information School
+ *	University of Washington
+ *	Seattle, WA 98195-2840
+ *	wobbrock@uw.edu
+ *
+ *	Andrew D. Wilson, Ph.D.
+ *	Microsoft Research
+ *	One Microsoft Way
+ *	Redmond, WA 98052
+ *	awilson@microsoft.com
+ *
+ *	Yang Li, Ph.D.
+ *	Department of Computer Science and Engineering
+ * 	University of Washington
+ *	Seattle, WA 98195-2840
+ * 	yangli@cs.washington.edu
+ *
+ * The academic publication for the $1 recognizer, and what should be 
+ * used to cite it, is:
+ *
+ *	Wobbrock, J.O., Wilson, A.D. and Li, Y. (2007). Gestures without 
+ *	  libraries, toolkits or training: A $1 recognizer for user interface 
+ *	  prototypes. Proceedings of the ACM Symposium on User Interface 
+ *	  Software and Technology (UIST '07). Newport, Rhode Island (October 
+ *	  7-10, 2007). New York: ACM Press, pp. 159-168.
+ *
+ * The Protractor enhancement was separately published by Yang Li and programmed 
+ * here by Jacob O. Wobbrock:
+ *
+ *	Li, Y. (2010). Protractor: A fast and accurate gesture
+ *	  recognizer. Proceedings of the ACM Conference on Human
+ *	  Factors in Computing Systems (CHI '10). Atlanta, Georgia
+ *	  (April 10-15, 2010). New York: ACM Press, pp. 2169-2172.
+ *
+ * This software is distributed under the "New BSD License" agreement:
+ *
+ * Copyright (C) 2007-2012, Jacob O. Wobbrock, Andrew D. Wilson and Yang Li.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *    * Redistributions of source code must retain the above copyright
+ *      notice, this list of conditions and the following disclaimer.
+ *    * Redistributions in binary form must reproduce the above copyright
+ *      notice, this list of conditions and the following disclaimer in the
+ *      documentation and/or other materials provided with the distribution.
+ *    * Neither the names of the University of Washington nor Microsoft,
+ *      nor the names of its contributors may be used to endorse or promote
+ *      products derived from this software without specific prior written
+ *      permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+ * IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL Jacob O. Wobbrock OR Andrew D. Wilson
+ * OR Yang Li BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,
+ * OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+ * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+**/
+//
+// Point class
+//
 function Point(x, y) // constructor
 {
 	this.X = x;
@@ -54,7 +123,9 @@ function DollarRecognizer() // constructor
 	//
 	// one built-in unistroke per gesture type
 	//
-
+	this.Unistrokes = new Array(NumUnistrokes);
+	this.Unistrokes[0] = new Unistroke("circle", new Array(new Point(127,141),new Point(124,140),new Point(120,139),new Point(118,139),new Point(116,139),new Point(111,140),new Point(109,141),new Point(104,144),new Point(100,147),new Point(96,152),new Point(93,157),new Point(90,163),new Point(87,169),new Point(85,175),new Point(83,181),new Point(82,190),new Point(82,195),new Point(83,200),new Point(84,205),new Point(88,213),new Point(91,216),new Point(96,219),new Point(103,222),new Point(108,224),new Point(111,224),new Point(120,224),new Point(133,223),new Point(142,222),new Point(152,218),new Point(160,214),new Point(167,210),new Point(173,204),new Point(178,198),new Point(179,196),new Point(182,188),new Point(182,177),new Point(178,167),new Point(170,150),new Point(163,138),new Point(152,130),new Point(143,129),new Point(140,131),new Point(129,136),new Point(126,139)));
+	//
 	// The $1 Gesture Recognizer API begins here -- 3 methods: Recognize(), AddGesture(), and DeleteUserGestures()
 	//
 	this.Recognize = function(points, useProtractor)
