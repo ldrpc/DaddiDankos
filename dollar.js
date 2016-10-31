@@ -106,7 +106,7 @@ function Result(name, score) // constructor
 //
 // DollarRecognizer class constants
 //
-var NumUnistrokes = 16;
+var NumUnistrokes = 1;
 var NumPoints = 64;
 var SquareSize = 250.0;
 var Origin = new Point(0,0);
@@ -125,21 +125,6 @@ function DollarRecognizer() // constructor
 	//
 	this.Unistrokes = new Array(NumUnistrokes);
 	this.Unistrokes[0] = new Unistroke("circle", new Array(new Point(127,141),new Point(124,140),new Point(120,139),new Point(118,139),new Point(116,139),new Point(111,140),new Point(109,141),new Point(104,144),new Point(100,147),new Point(96,152),new Point(93,157),new Point(90,163),new Point(87,169),new Point(85,175),new Point(83,181),new Point(82,190),new Point(82,195),new Point(83,200),new Point(84,205),new Point(88,213),new Point(91,216),new Point(96,219),new Point(103,222),new Point(108,224),new Point(111,224),new Point(120,224),new Point(133,223),new Point(142,222),new Point(152,218),new Point(160,214),new Point(167,210),new Point(173,204),new Point(178,198),new Point(179,196),new Point(182,188),new Point(182,177),new Point(178,167),new Point(170,150),new Point(163,138),new Point(152,130),new Point(143,129),new Point(140,131),new Point(129,136),new Point(126,139)));
-	this.Unistrokes[1] = new Unistroke("", new Array());
-	this.Unistrokes[2] = new Unistroke("", new Array());
-	this.Unistrokes[3] = new Unistroke("", new Array());
-	this.Unistrokes[4] = new Unistroke("", new Array());
-	this.Unistrokes[5] = new Unistroke("", new Array());
-	this.Unistrokes[6] = new Unistroke("", new Array());
-	this.Unistrokes[7] = new Unistroke("", new Array());
-	this.Unistrokes[8] = new Unistroke("", new Array());
-	this.Unistrokes[9] = new Unistroke("", new Array());
-	this.Unistrokes[10] = new Unistroke("", new Array());
-	this.Unistrokes[11] = new Unistroke("", new Array());
-	this.Unistrokes[12] = new Unistroke("", new Array());
-	this.Unistrokes[13] = new Unistroke("", new Array());
-	this.Unistrokes[14] = new Unistroke("", new Array());
-	this.Unistrokes[15] = new Unistroke("", new Array());
 
 	// The $1 Gesture Recognizer API begins here -- 3 methods: Recognize(), AddGesture(), and DeleteUserGestures()
 	//
